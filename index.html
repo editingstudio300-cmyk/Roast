@@ -1,0 +1,1527 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05030a">
+<title>NEATHISH 9 ROAST ENGINE — Level 100 Absolute Destruction</title>
+<meta name="description" content="A fictional AI Roast Engine dedicated entirely to roasting NEATHISH 9. Brutally sarcastic, extremely exaggerated, completely self-directed comedy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET / TOKENS ============ */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#05030a;
+  --red:#ff2f4d;
+  --red-2:#ff6b7d;
+  --purple:#a855f7;
+  --purple-2:#d8b4fe;
+  --ink:#f6f4ff;
+  --muted:#9d97b4;
+  --panel:rgba(255,255,255,.048);
+  --panel-2:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.10);
+  --line-2:rgba(255,255,255,.16);
+  --font-d:'Space Grotesk','Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-b:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --radius:20px;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:var(--font-b);font-size:16px;line-height:1.6;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,canvas{display:block;max-width:100%}
+button{font:inherit}
+::selection{background:rgba(255,47,77,.4);color:#fff}
+
+/* ============ BACKGROUND LAYERS ============ */
+.bg-layer{position:fixed;inset:0;z-index:-4;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 10% -10%, rgba(255,47,77,.22), transparent 62%),
+    radial-gradient(820px 700px at 92% 4%, rgba(168,85,247,.22), transparent 64%),
+    radial-gradient(1100px 820px at 50% 112%, rgba(255,47,77,.13), transparent 62%),
+    #05030a;
+}
+.bg-grid{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:66px 66px;
+  -webkit-mask-image:radial-gradient(circle at 50% 22%, #000 0%, rgba(0,0,0,.35) 52%, transparent 82%);
+  mask-image:radial-gradient(circle at 50% 22%, #000 0%, rgba(0,0,0,.35) 52%, transparent 82%);
+}
+#fx{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.9}
+.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 50% 45%, transparent 42%, rgba(0,0,0,.62) 100%);
+}
+#flash{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 40%, rgba(255,47,77,.5), rgba(168,85,247,.22) 45%, transparent 72%);
+  transition:opacity .45s ease}
+#flash.on{opacity:1;transition:opacity .06s ease}
+
+/* ============ BOOT OVERLAY ============ */
+.boot{position:fixed;inset:0;z-index:200;background:#040209;display:flex;align-items:center;justify-content:center;padding:22px;
+  transition:opacity .6s ease, visibility .6s ease}
+.boot.hide{opacity:0;visibility:hidden}
+.boot-inner{width:100%;max-width:560px;font-family:var(--font-d)}
+.boot-logo{font-size:clamp(1.1rem,5vw,1.6rem);font-weight:700;letter-spacing:.16em;margin-bottom:14px}
+.boot-logo span{color:var(--red)}
+.boot-logo em{font-style:normal;font-size:.7em;color:var(--muted);letter-spacing:.2em}
+.boot-log{margin:0 0 16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(.62rem,2.5vw,.8rem);
+  line-height:1.85;color:#8ef0c0;min-height:190px;white-space:pre-wrap;word-break:break-word}
+.boot-log .dim{color:var(--muted)}
+.boot-log .warn{color:#ffb020}
+.boot-log .bad{color:var(--red-2)}
+.boot-bar{height:6px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;box-shadow:inset 0 0 12px rgba(0,0,0,.6)}
+.boot-bar i{display:block;height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,var(--red),var(--purple));
+  box-shadow:0 0 18px rgba(255,47,77,.8);transition:width .3s ease}
+.boot-skip{margin-top:18px;background:none;border:1px solid var(--line-2);color:var(--muted);border-radius:99px;padding:8px 16px;
+  font-size:.72rem;letter-spacing:.14em;cursor:pointer;transition:.25s}
+.boot-skip:hover{color:#fff;border-color:var(--red);box-shadow:0 0 22px -6px rgba(255,47,77,.8)}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:70;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  background:linear-gradient(180deg,rgba(5,3,10,.9),rgba(5,3,10,.42));border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1180px;margin:0 auto;padding:11px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-d);font-weight:700;letter-spacing:.13em;font-size:.78rem}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red);animation:pulseDot 1.7s infinite}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.78)}}
+.brand em{font-style:normal;color:var(--red)}
+.brand .ver{color:var(--muted);font-size:.68em;letter-spacing:.16em}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.status-pill{display:none;align-items:center;gap:6px;font-size:.62rem;letter-spacing:.16em;color:#8ef0c0;
+  border:1px solid rgba(142,240,192,.3);border-radius:99px;padding:5px 11px;background:rgba(142,240,192,.06)}
+.status-pill i{width:6px;height:6px;border-radius:50%;background:#8ef0c0;box-shadow:0 0 8px #8ef0c0;animation:pulseDot 1.4s infinite}
+.icon-btn{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line);
+  background:var(--panel);color:var(--ink);cursor:pointer;transition:.22s;font-size:.95rem}
+.icon-btn:hover{border-color:var(--red);box-shadow:0 0 20px -6px rgba(255,47,77,.9);transform:translateY(-1px)}
+
+/* ============ BUTTONS ============ */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:0;cursor:pointer;font-family:var(--font-d);font-weight:600;letter-spacing:.05em;font-size:.85rem;
+  padding:14px 22px;border-radius:14px;color:#fff;text-decoration:none;white-space:nowrap;overflow:hidden;
+  transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .25s,background .25s}
+.btn:active{transform:translateY(1px) scale(.99)}
+.btn:focus-visible{outline:2px solid var(--purple-2);outline-offset:3px}
+.btn-primary{background:linear-gradient(135deg,#ff2f4d,#a855f7);
+  box-shadow:0 14px 34px -12px rgba(255,47,77,.95),0 0 56px -14px rgba(168,85,247,.85),inset 0 0 0 1px rgba(255,255,255,.14)}
+.btn-primary:hover{transform:translateY(-2px);
+  box-shadow:0 20px 46px -12px rgba(255,47,77,1),0 0 74px -10px rgba(168,85,247,.95),inset 0 0 0 1px rgba(255,255,255,.2)}
+.btn-primary::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(110deg,transparent 32%,rgba(255,255,255,.42) 50%,transparent 68%);
+  background-size:250% 100%;animation:sheen 3.6s linear infinite;mix-blend-mode:overlay}
+@keyframes sheen{0%{background-position:210% 0}100%{background-position:-70% 0}}
+.btn-secondary{background:var(--panel);border:1px solid var(--line-2);color:var(--ink);backdrop-filter:blur(10px)}
+.btn-secondary:hover{transform:translateY(-2px);border-color:rgba(255,47,77,.6);background:rgba(255,47,77,.08);
+  box-shadow:0 0 34px -12px rgba(255,47,77,.9)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.btn-ghost:hover{color:#fff;border-color:var(--red);box-shadow:0 0 24px -10px rgba(255,47,77,.9)}
+.btn.sm{padding:9px 14px;font-size:.72rem;border-radius:11px}
+.btn.xl{padding:19px 34px;font-size:1rem;border-radius:17px}
+.btn-danger{background:linear-gradient(135deg,#7f1d3a,#3b0764);border:1px solid rgba(255,47,77,.5);color:#fff}
+.btn-danger:hover{transform:translateY(-2px);box-shadow:0 0 40px -10px rgba(255,47,77,1);border-color:var(--red)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+/* ============ LAYOUT ============ */
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+#app.shake{animation:shake .42s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{
+  10%,90%{transform:translate3d(-2px,0,0)}
+  20%,80%{transform:translate3d(4px,0,0)}
+  30%,50%,70%{transform:translate3d(-7px,0,0)}
+  40%,60%{transform:translate3d(7px,0,0)}
+}
+section{position:relative}
+.sec-head{margin-bottom:26px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-d);font-size:.64rem;letter-spacing:.24em;
+  color:var(--red-2);text-transform:uppercase;border:1px solid rgba(255,47,77,.32);background:rgba(255,47,77,.07);
+  border-radius:99px;padding:6px 13px;margin-bottom:14px}
+.kicker i{width:5px;height:5px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red)}
+h2.sec-title{font-family:var(--font-d);font-weight:700;font-size:clamp(1.5rem,5.5vw,2.5rem);line-height:1.06;
+  letter-spacing:-.02em;margin:0 0 10px;text-transform:uppercase}
+.sec-sub{color:var(--muted);max-width:58ch;font-size:.95rem;margin:0}
+
+/* ============ HERO ============ */
+.hero{padding:52px 0 40px;text-align:center;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:.64rem;letter-spacing:.2em;font-family:var(--font-d);
+  color:#ffd166;border:1px solid rgba(255,209,102,.35);background:rgba(255,209,102,.07);
+  border-radius:99px;padding:7px 15px;text-transform:uppercase;animation:flickerBadge 5s infinite}
+@keyframes flickerBadge{0%,96%,100%{opacity:1}97%{opacity:.5}98%{opacity:1}}
+.hero h1{font-family:var(--font-d);font-weight:700;text-transform:uppercase;letter-spacing:-.025em;
+  font-size:clamp(2.05rem,9.4vw,5rem);line-height:.98;margin:20px 0 0;position:relative}
+.hero h1 .line{display:block}
+.grad{background:linear-gradient(100deg,#ff2f4d 0%,#ff8a5c 28%,#a855f7 68%,#e0c3ff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 28px rgba(255,47,77,.4))}
+.hero h1 .glitch{position:relative;display:inline-block}
+.hero h1 .glitch::before,.hero h1 .glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;
+  color:transparent;-webkit-background-clip:text;background-clip:text;pointer-events:none}
+.hero h1 .glitch::before{background:linear-gradient(100deg,#22d3ee,#22d3ee);animation:gl1 6s infinite}
+.hero h1 .glitch::after{background:linear-gradient(100deg,#ff2f4d,#ff2f4d);animation:gl2 6s infinite}
+@keyframes gl1{0%,92%,100%{transform:none;opacity:0}93%{transform:translate(-3px,1px);opacity:.75}95%{transform:translate(2px,-2px);opacity:.6}97%{opacity:0}}
+@keyframes gl2{0%,90%,100%{transform:none;opacity:0}91%{transform:translate(3px,-1px);opacity:.8}94%{transform:translate(-2px,2px);opacity:.6}96%{opacity:0}}
+.hero .sub{margin:20px auto 0;max-width:44ch;color:#cfc9e4;font-size:clamp(.98rem,3.4vw,1.22rem);line-height:1.55}
+.hero .sub b{color:#fff;font-weight:600}
+.hero-cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero-stats{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:640px;margin-left:auto;margin-right:auto}
+.hstat{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:14px 8px;backdrop-filter:blur(10px)}
+.hstat b{display:block;font-family:var(--font-d);font-size:clamp(1rem,4.4vw,1.5rem);color:#fff;letter-spacing:-.01em}
+.hstat span{font-size:.58rem;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+
+/* ticker */
+.ticker{margin-top:34px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(255,47,77,.07),rgba(168,85,247,.07));overflow:hidden;position:relative}
+.ticker-track{display:flex;gap:0;width:max-content;animation:marquee 38s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;letter-spacing:.1em;
+  color:#cfc9e4;padding:10px 26px;white-space:nowrap}
+.ticker-track span em{color:var(--red-2);font-style:normal}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ============ GLASS CARD ============ */
+.glass{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 30px 70px -40px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06)}
+.glass::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(140deg,rgba(255,47,77,.5),transparent 40%,transparent 62%,rgba(168,85,247,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.85}
+
+/* ============ CONTROL DECK ============ */
+.deck{padding:56px 0 10px}
+.deck-grid{display:grid;gap:16px}
+.deck-panel{padding:24px 20px}
+.level-readout{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+#levelNum{font-family:var(--font-d);font-weight:700;font-size:clamp(2.6rem,13vw,4.2rem);line-height:.86;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,#ff9db0 55%,#b06bff);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 26px rgba(255,47,77,.45))}
+.level-meta{flex:1;min-width:180px}
+#levelName{font-family:var(--font-d);font-weight:700;letter-spacing:.14em;font-size:clamp(.86rem,3.6vw,1.1rem);
+  text-transform:uppercase;color:#fff;display:block}
+#levelDesc{color:var(--muted);font-size:.86rem;display:block;margin-top:2px}
+.level-tag{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:.6rem;letter-spacing:.2em;font-family:var(--font-d);
+  text-transform:uppercase;border-radius:99px;padding:7px 13px;border:1px solid rgba(255,47,77,.45);background:rgba(255,47,77,.1);color:#ffb7c2}
+.range-wrap{margin-top:22px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:99px;outline:none;cursor:pointer;
+  background:linear-gradient(90deg,#22c55e,#eab308 30%,#ff6b6b 62%,#a855f7 84%,#ff2f4d 100%);
+  box-shadow:inset 0 0 12px rgba(0,0,0,.55),0 0 26px -10px rgba(255,47,77,.9)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#fff,#ff5b73 42%,#a855f7);border:2px solid rgba(255,255,255,.85);cursor:grab;
+  box-shadow:0 0 22px rgba(255,47,77,.95),0 0 44px rgba(168,85,247,.65)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;border:2px solid #fff;
+  background:radial-gradient(circle at 34% 30%,#fff,#ff5b73 42%,#a855f7);box-shadow:0 0 22px rgba(255,47,77,.95);cursor:grab}
+.scale-ticks{display:flex;justify-content:space-between;margin-top:9px;font-size:.56rem;letter-spacing:.14em;color:var(--muted);
+  font-family:var(--font-d);text-transform:uppercase}
+.quick-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-family:var(--font-d);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;padding:8px 13px;border-radius:99px;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);cursor:pointer;transition:.22s}
+.chip:hover{color:#fff;border-color:rgba(255,47,77,.6);box-shadow:0 0 20px -8px rgba(255,47,77,.9)}
+.chip.active{color:#fff;background:linear-gradient(135deg,rgba(255,47,77,.32),rgba(168,85,247,.32));border-color:rgba(255,47,77,.65)}
+.side-note{padding:22px 20px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.note{display:flex;gap:11px;align-items:flex-start;font-size:.82rem;color:#cfc9e4}
+.note i{flex:0 0 auto;width:26px;height:26px;border-radius:9px;display:grid;place-items:center;font-size:.78rem;font-style:normal;
+  background:rgba(255,47,77,.14);border:1px solid rgba(255,47,77,.35)}
+
+/* ============ CONSOLE / ROAST CARD ============ */
+.console{padding:48px 0 10px}
+.console-shell{padding:0;overflow:hidden}
+.console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;
+  border-bottom:1px solid var(--line);background:rgba(0,0,0,.3);flex-wrap:wrap}
+.dots{display:flex;gap:6px;align-items:center}
+.dots i{width:9px;height:9px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+.console-bar .title{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.68rem;letter-spacing:.1em;color:var(--muted)}
+.console-body{padding:22px 18px 24px;position:relative}
+.idle{text-align:center;padding:34px 8px;position:relative}
+.idle-icon{width:78px;height:78px;margin:0 auto 18px;border-radius:24px;display:grid;place-items:center;font-size:2rem;
+  background:linear-gradient(140deg,rgba(255,47,77,.2),rgba(168,85,247,.2));border:1px solid var(--line-2);
+  animation:breathe 3.4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,47,77,.35)}50%{transform:scale(1.06);box-shadow:0 0 42px -6px rgba(255,47,77,.75)}}
+.idle h3{font-family:var(--font-d);text-transform:uppercase;letter-spacing:.1em;margin:0 0 8px;font-size:1.02rem}
+.idle p{color:var(--muted);margin:0 auto 22px;max-width:42ch;font-size:.9rem}
+
+.roast-card{padding:22px 18px 20px;position:relative;display:none}
+.roast-card.show{display:block}
+.roast-card.hit{animation:cardHit .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cardHit{0%{transform:translateY(16px) scale(.975);opacity:0;filter:blur(6px)}
+  60%{transform:translateY(0) scale(1.006);opacity:1;filter:blur(0)}100%{transform:none;opacity:1}}
+.rc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.rc-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-d);font-size:.64rem;letter-spacing:.2em;
+  text-transform:uppercase;color:#ffb7c2;border:1px solid rgba(255,47,77,.5);background:rgba(255,47,77,.12);
+  border-radius:99px;padding:7px 14px;box-shadow:0 0 28px -10px rgba(255,47,77,.9)}
+.rc-tag i{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pulseDot 1s infinite}
+.rc-level{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.64rem;letter-spacing:.1em;color:var(--muted)}
+.rc-cat{margin-left:8px;color:#c9a6ff}
+#roastText{font-size:clamp(1.06rem,4.2vw,1.52rem);line-height:1.5;font-weight:500;color:#fff;margin:0;
+  letter-spacing:-.005em;text-wrap:pretty}
+#roastText .worse{display:block;margin-top:14px;padding-left:14px;border-left:3px solid var(--red);color:#ffc0c9;font-weight:600}
+#roastText .pre{color:#ff8ea1;font-weight:700}
+.warn{margin-top:16px;display:none;gap:10px;align-items:flex-start;font-size:.8rem;color:#ffd9a0;
+  background:rgba(255,176,32,.09);border:1px solid rgba(255,176,32,.4);border-radius:14px;padding:12px 14px;line-height:1.5}
+.warn.show{display:flex;animation:cardHit .4s both}
+.warn b{color:#ffb020}
+.metrics{margin-top:22px;display:grid;gap:13px}
+.metric-top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-d);font-size:.62rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.metric-val{color:#fff;font-size:.74rem;letter-spacing:.06em}
+.bar{height:9px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;box-shadow:inset 0 0 10px rgba(0,0,0,.6)}
+.bar i{display:block;height:100%;width:0%;border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1);
+  background:linear-gradient(90deg,#ff2f4d,#a855f7);box-shadow:0 0 16px rgba(255,47,77,.75)}
+.bar.green i{background:linear-gradient(90deg,#34d399,#22d3ee);box-shadow:0 0 16px rgba(34,211,238,.7)}
+.dmg-total{margin-top:20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-top:18px;border-top:1px solid var(--line)}
+#dmgTotal{font-family:var(--font-d);font-weight:700;font-size:clamp(1.5rem,7vw,2.2rem);letter-spacing:-.02em;
+  background:linear-gradient(180deg,#fff,#ff7d8f);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(255,47,77,.5))}
+.dmg-total small{font-family:var(--font-d);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.combo{margin-left:auto;font-family:var(--font-d);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#ffb020;border:1px solid rgba(255,176,32,.45);background:rgba(255,176,32,.1);border-radius:99px;padding:6px 12px;display:none}
+.combo.show{display:inline-block;animation:cardHit .4s both}
+.rc-actions{margin-top:20px;display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.rc-actions .btn{width:100%}
+.floatdmg{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);pointer-events:none;
+  font-family:var(--font-d);font-weight:700;font-size:clamp(1.4rem,6vw,2.2rem);color:#ff5f74;letter-spacing:-.02em;
+  text-shadow:0 0 28px rgba(255,47,77,.95);animation:floatUp 1.15s cubic-bezier(.2,.8,.2,1) forwards;z-index:5}
+@keyframes floatUp{0%{opacity:0;transform:translate(-50%,-30%) scale(.7)}
+  22%{opacity:1;transform:translate(-50%,-55%) scale(1.08)}
+  100%{opacity:0;transform:translate(-50%,-140%) scale(1)}}
+
+/* ============ ANALYTICS ============ */
+.analytics{padding:60px 0 20px}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:18px 16px}
+.stat .num{font-family:var(--font-d);font-weight:700;font-size:clamp(1.2rem,6vw,1.85rem);letter-spacing:-.02em;color:#fff;display:block;line-height:1.1}
+.stat .lbl{display:block;margin-top:6px;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stat .tagline{display:block;margin-top:8px;font-size:.74rem;color:#ff9aa9}
+.chart-panel{margin-top:14px;padding:22px 18px}
+.chart-title{font-family:var(--font-d);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:#fff;margin:0 0 18px}
+.cat-row{margin-bottom:15px}
+.cat-top{display:flex;justify-content:space-between;font-family:var(--font-d);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cat-top b{color:#fff;letter-spacing:.04em}
+.feed{margin-top:14px;padding:16px 18px;background:rgba(0,0,0,.32)}
+.feed h4{margin:0 0 12px;font-family:var(--font-d);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red-2)}
+.feed ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;max-height:210px;overflow:hidden}
+.feed li{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.7rem;color:#b8b2cc;display:flex;gap:9px}
+.feed li em{color:#8ef0c0;font-style:normal;flex:0 0 auto}
+.feed li b{color:#fff;font-weight:500}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ CLOSING ============ */
+.closing{padding:70px 0 40px;text-align:center}
+.closing h2{font-family:var(--font-d);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(1.5rem,6.6vw,3rem);line-height:1.05;margin:0 auto 16px;max-width:22ch}
+.closing h2 .strike{color:#ff5f74}
+.closing p{color:var(--muted);max-width:52ch;margin:0 auto 30px;font-size:.95rem}
+.regret-meter{max-width:420px;margin:0 auto 30px}
+.regret-meter .top{display:flex;justify-content:space-between;font-family:var(--font-d);font-size:.62rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.regret-meter .bar{height:12px}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);margin-top:20px;padding:28px 0 46px;background:rgba(0,0,0,.28)}
+.foot-inner{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+.foot-inner p{margin:0;font-size:.72rem;color:#7d7894;max-width:64ch;line-height:1.7}
+.foot-inner strong{color:#cfc9e4;font-weight:600}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:150;display:none;align-items:center;justify-content:center;padding:20px;
+  background:rgba(3,1,8,.82);backdrop-filter:blur(10px)}
+.modal.open{display:flex;animation:fadeIn .28s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-card{max-width:480px;width:100%;padding:26px 22px;text-align:center;animation:cardHit .45s both}
+.modal-card h3{font-family:var(--font-d);text-transform:uppercase;letter-spacing:.12em;margin:0 0 12px;font-size:1.15rem;color:#ff7d8f}
+.modal-card p{color:#cfc9e4;font-size:.92rem;margin:0 0 22px}
+
+/* ============ TOASTS ============ */
+#toasts{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:180;display:flex;flex-direction:column;gap:10px;
+  width:min(92vw,420px);pointer-events:none}
+.toast{pointer-events:auto;border-radius:15px;padding:13px 16px;font-size:.82rem;color:#fff;
+  background:linear-gradient(140deg,rgba(255,47,77,.22),rgba(168,85,247,.2)),rgba(12,8,22,.92);
+  border:1px solid rgba(255,47,77,.42);backdrop-filter:blur(14px);
+  box-shadow:0 20px 44px -22px rgba(0,0,0,.95),0 0 34px -18px rgba(255,47,77,.9);
+  animation:toastIn .35s cubic-bezier(.2,.8,.2,1) both}
+.toast.out{animation:toastOut .3s ease forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes toastOut{to{opacity:0;transform:translateY(-10px) scale(.97)}}
+
+/* ============ RESPONSIVE ============ */
+@media (min-width:700px){
+  .nav-inner{padding:13px 22px}
+  .brand{font-size:.84rem}
+  .status-pill{display:inline-flex}
+  .wrap{padding:0 22px}
+  .hero{padding:74px 0 52px}
+  .deck-grid{grid-template-columns:1.55fr 1fr}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+  .console-body{padding:30px 26px 28px}
+  .roast-card{padding:30px 26px 26px}
+  .rc-actions{grid-template-columns:repeat(4,1fr)}
+  .closing{padding:96px 0 60px}
+  .glass{border-radius:24px}
+}
+@media (min-width:1000px){
+  .hero-badge{font-size:.68rem}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== BACKGROUND ===================== -->
+<div class="bg-layer"></div>
+<div class="bg-grid"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
+
+<!-- ===================== BOOT OVERLAY ===================== -->
+<div class="boot" id="boot">
+  <div class="boot-inner">
+    <div class="boot-logo">ROAST<span>ENGINE</span> <em>v9.0.9</em></div>
+    <pre class="boot-log" id="bootLog"></pre>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <button class="boot-skip" id="bootSkip">SKIP INTRO (coward)</button>
+  </div>
+</div>
+
+<div id="app">
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>ROAST<em>ENGINE</em> <span class="ver">v9.0.9</span></span>
+    </div>
+    <div class="nav-actions">
+      <span class="status-pill"><i></i> THREAT LEVEL: NEATHISH 9</span>
+      <button class="icon-btn" id="soundToggle" title="Toggle sound effects" aria-label="Toggle sound effects">🔊</button>
+      <a href="#console" class="btn btn-ghost sm">LAUNCH CONSOLE</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-badge">⚠ SELF-INFLICTED COMEDY PROTOCOL ACTIVE</div>
+
+    <h1>
+      <span class="line">WELCOME TO THE</span>
+      <span class="line grad glitch" data-t="NEATHISH 9">NEATHISH 9</span>
+      <span class="line">ROAST ENGINE</span>
+    </h1>
+
+    <p class="sub">You came here voluntarily. <b>That was your first mistake.</b></p>
+
+    <div class="hero-cta">
+      <button class="btn btn-primary xl" id="heroRoast">🔥 ROAST ME</button>
+      <button class="btn btn-secondary xl" id="regretBtn">I REGRET EVERYTHING</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat"><b>110</b><span>Roasts Loaded</span></div>
+      <div class="hstat"><b>0.02%</b><span>Dignity Left</span></div>
+      <div class="hstat"><b>∞</b><span>Regret Units</span></div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>⚠ NEATHISH 9 IS CURRENTLY: PROCRASTINATING</span>
+      <span>◈ 47 UNFINISHED TECH PROJECTS DETECTED</span>
+      <span>⚠ FOOTBALL OPINION LEVEL: <em>UNQUALIFIED</em></span>
+      <span>◈ MAIN CHARACTER SYNDROME: <em>CONFIRMED</em></span>
+      <span>⚠ 214 BROWSER TABS OPEN, THREE OF THEM USEFUL</span>
+      <span>◈ PLANNING COMPLETED: 100% — EXECUTION: PENDING SINCE FEBRUARY</span>
+      <span>⚠ ALARM SNOOZED 14 TIMES. ALARM HAS GIVEN UP ON ITSELF.</span>
+      <span>◈ NEATHISH 9 SAID "THIS IS THE YEAR" IN EVERY YEAR SO FAR</span>
+      <span>⚠ NEATHISH 9 IS CURRENTLY: PROCRASTINATING</span>
+      <span>◈ 47 UNFINISHED TECH PROJECTS DETECTED</span>
+      <span>⚠ FOOTBALL OPINION LEVEL: <em>UNQUALIFIED</em></span>
+      <span>◈ MAIN CHARACTER SYNDROME: <em>CONFIRMED</em></span>
+      <span>⚠ 214 BROWSER TABS OPEN, THREE OF THEM USEFUL</span>
+      <span>◈ PLANNING COMPLETED: 100% — EXECUTION: PENDING SINCE FEBRUARY</span>
+      <span>⚠ ALARM SNOOZED 14 TIMES. ALARM HAS GIVEN UP ON ITSELF.</span>
+      <span>◈ NEATHISH 9 SAID "THIS IS THE YEAR" IN EVERY YEAR SO FAR</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTROL DECK ===================== -->
+<section class="deck" id="deck">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i> CONTROL DECK</span>
+      <h2 class="sec-title">Roast Intensity</h2>
+      <p class="sec-sub">Set your level of destruction. The engine defaults to 100 because NEATHISH 9 has made a terrible decision and refuses to reconsider.</p>
+    </div>
+
+    <div class="deck-grid">
+      <div class="glass deck-panel reveal">
+        <div class="level-readout">
+          <span id="levelNum">100</span>
+          <span class="level-meta">
+            <span id="levelName">NUCLEAR</span>
+            <span id="levelDesc">NEATHISH 9 Has Made A Terrible Decision.</span>
+          </span>
+        </div>
+        <span class="level-tag" id="levelBadge">☢ SAFETY RAILS: DISABLED</span>
+
+        <div class="range-wrap">
+          <input type="range" id="intensity" min="1" max="100" value="100" step="1"
+                 aria-label="Roast intensity level">
+          <div class="scale-ticks">
+            <span>Friendly</span><span>Spicy</span><span>Savage</span><span>Brutal</span><span>Nuclear</span>
+          </div>
+        </div>
+
+        <div class="quick-row" id="quickRow">
+          <button class="chip" data-level="10">10 · Friendly</button>
+          <button class="chip" data-level="35">35 · Savage</button>
+          <button class="chip" data-level="65">65 · Brutal</button>
+          <button class="chip" data-level="85">85 · Catastrophic</button>
+          <button class="chip active" data-level="100">100 · Nuclear</button>
+        </div>
+      </div>
+
+      <div class="glass side-note reveal">
+        <div class="note"><i>🔥</i><div><b>Roasts are generated fresh every single time.</b> No repeats until the engine has exhausted 110 certified insults and started inventing new ones out of spite.</div></div>
+        <div class="note"><i>🎯</i><div>Targets include: procrastination, terrible timing, overconfidence, chaotic school life, football obsession, unfinished tech projects, and imaginary main-character energy.</div></div>
+        <div class="note"><i>🧡</i><div>Comedy only. No protected characteristics, no real trauma. Just one very fictional NEATHISH 9 being lovingly dismantled.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ROAST CONSOLE ===================== -->
+<section class="console" id="console">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i> LIVE OUTPUT</span>
+      <h2 class="sec-title">Roast Console</h2>
+      <p class="sec-sub">Every roast is analysed, graded, and delivered with maximum disrespect and minimum accuracy.</p>
+    </div>
+
+    <div class="glass console-shell reveal">
+      <div class="console-bar">
+        <div class="dots"><i></i><i></i><i></i><span class="title">neathish9_roast_engine / output.log</span></div>
+        <span class="title" id="consoleStatus">STATUS: AWAITING VICTIM</span>
+      </div>
+
+      <div class="console-body">
+        <div id="idleState" class="idle">
+          <div class="idle-icon">🎯</div>
+          <h3>No roast generated yet</h3>
+          <p>The engine is warmed up, lubricated with sarcasm and pointed directly at NEATHISH 9. Press the button. You know you want to.</p>
+          <button class="btn btn-primary" id="idleRoast">🔥 ROAST ME</button>
+        </div>
+
+        <article class="roast-card" id="roastCard">
+          <div class="rc-head">
+            <span class="rc-tag"><i></i> ROAST DETECTED</span>
+            <span class="rc-level">
+              <span id="cardLevel">LEVEL 100 · NUCLEAR</span>
+              <span class="rc-cat" id="roastCat">#PROCRASTINATION</span>
+            </span>
+          </div>
+
+          <p id="roastText" aria-live="polite"></p>
+
+          <div class="warn" id="warnBox">
+            <span>⚠</span>
+            <span id="warnText"></span>
+          </div>
+
+          <div class="metrics" id="damageGrid">
+            <div class="metric" data-metric="ego">
+              <div class="metric-top"><span>EGO INTEGRITY</span><span class="metric-val">100%</span></div>
+              <div class="bar"><i></i></div>
+            </div>
+            <div class="metric" data-metric="dignity">
+              <div class="metric-top"><span>DIGNITY REMAINING</span><span class="metric-val">100%</span></div>
+              <div class="bar"><i></i></div>
+            </div>
+            <div class="metric" data-metric="cope">
+              <div class="metric-top"><span>COPING MECHANISMS</span><span class="metric-val">100%</span></div>
+              <div class="bar"><i></i></div>
+            </div>
+            <div class="metric" data-metric="mcs">
+              <div class="metric-top"><span>MAIN CHARACTER SYNDROME</span><span class="metric-val">60%</span></div>
+              <div class="bar green"><i></i></div>
+            </div>
+          </div>
+
+          <div class="dmg-total">
+            <span id="dmgTotal">-0</span>
+            <small>Total Ego Damage</small>
+            <span class="combo" id="comboTag">ESCALATION ×1</span>
+          </div>
+
+          <div class="rc-actions">
+            <button class="btn btn-primary" id="anotherBtn">🔁 Another Roast</button>
+            <button class="btn btn-danger" id="worseBtn">☢ Make It Worse</button>
+            <button class="btn btn-secondary" id="copyBtn">📋 Copy Roast</button>
+            <button class="btn btn-secondary" id="shareBtn">📤 Share Roast</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ANALYTICS ===================== -->
+<section class="analytics" id="analytics">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker"><i></i> FICTIONAL ANALYTICS</span>
+      <h2 class="sec-title">NEATHISH 9 Roast Statistics</h2>
+      <p class="sec-sub">Real-time metrics pulled directly from a dashboard that does not exist, measuring a person who does. All numbers are scientifically made up.</p>
+    </div>
+
+    <div class="stat-grid reveal">
+      <div class="glass stat"><span class="num" data-count="4206911">0</span><span class="lbl">Roasts Delivered</span><span class="tagline">and counting faster than your plans collapse</span></div>
+      <div class="glass stat"><span class="num" data-count="99" data-suffix="%">0</span><span class="lbl">Ego Obliterated</span><span class="tagline">the remaining 1% is pure stubbornness</span></div>
+      <div class="glass stat"><span class="num" data-count="0">0</span><span class="lbl">% Dignity Remaining</span><span class="tagline">rounded up from 0.02% out of kindness</span></div>
+      <div class="glass stat"><span class="num" data-count="47">0</span><span class="lbl">Unfinished Projects</span><span class="tagline">each one "almost done" since March</span></div>
+      <div class="glass stat"><span class="num" data-count="8742">0</span><span class="lbl">Football Excuses Deployed</span><span class="tagline">"we were robbed" used 3,001 times</span></div>
+      <div class="glass stat"><span class="num" data-count="12384">0</span><span class="lbl">Times "Tomorrow" Was Said</span><span class="tagline">tomorrow has filed a complaint</span></div>
+      <div class="glass stat"><span class="num" data-count="214">0</span><span class="lbl">Tabs Open Right Now</span><span class="tagline">three of them are important</span></div>
+      <div class="glass stat"><span class="num" data-count="14">0</span><span class="lbl">Alarms Ignored Today</span><span class="tagline">the phone is now in therapy</span></div>
+    </div>
+
+    <div class="glass chart-panel reveal">
+      <h3 class="chart-title">Roast Damage by Category</h3>
+      <div class="cat-row">
+        <div class="cat-top"><span>Procrastination</span><b>97%</b></div>
+        <div class="bar"><i data-w="97"></i></div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-top"><span>Terrible Timing</span><b>93%</b></div>
+        <div class="bar"><i data-w="93"></i></div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-top"><span>Football Obsession</span><b>91%</b></div>
+        <div class="bar"><i data-w="91"></i></div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-top"><span>Overconfidence</span><b>88%</b></div>
+        <div class="bar"><i data-w="88"></i></div>
+      </div>
+      <div class="cat-row">
+        <div class="cat-top"><span>Unfinished Tech Projects</span><b>84%</b></div>
+        <div class="bar"><i data-w="84"></i></div>
+      </div>
+      <div class="cat-row" style="margin-bottom:0">
+        <div class="cat-top"><span>Dramatic Reactions</span><b>79%</b></div>
+        <div class="bar green"><i data-w="79"></i></div>
+      </div>
+    </div>
+
+    <div class="glass feed reveal">
+      <h4>◉ Live Incident Feed — NEATHISH 9</h4>
+      <ul>
+        <li><em>[21:04]</em><span><b>NEATHISH 9</b> opened 7 new tabs, closed 0, researched the same thing twice.</span></li>
+        <li><em>[19:37]</em><span><b>NEATHISH 9</b> declared a project "basically finished". It has no working code.</span></li>
+        <li><em>[17:22]</em><span><b>NEATHISH 9</b> gave a 40-minute football analysis nobody requested. Nobody stopped him.</span></li>
+        <li><em>[14:09]</em><span><b>NEATHISH 9</b> set a 5 AM alarm and immediately apologized to himself.</span></li>
+        <li><em>[11:48]</em><span><b>NEATHISH 9</b> replied "I'll do it in 5 minutes" 2 hours ago. Authorities notified.</span></li>
+        <li><em>[09:15]</em><span><b>NEATHISH 9</b> described a mild inconvenience as his "villain origin story".</span></li>
+        <li><em>[07:02]</em><span><b>NEATHISH 9</b> planned to start the day early. The day is still waiting.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="closing">
+  <div class="wrap">
+    <h2>Congratulations. You survived the NEATHISH 9 Roast Engine. <span class="strike">Unfortunately, your dignity didn't.</span></h2>
+    <p>The engine would like to remind you that this entire website was built by you, about you, for you. That is either impressive or deeply concerning. It is both.</p>
+
+    <div class="regret-meter glass" style="padding:18px 16px">
+      <div class="top"><span>Regret-o-Meter</span><span id="regretVal">100%</span></div>
+      <div class="bar"><i id="regretBar" style="width:100%"></i></div>
+    </div>
+
+    <button class="btn btn-primary xl" id="againBtn">🔥 ROAST ME AGAIN</button>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="foot-inner">
+    <p><strong>NEATHISH 9 ROAST ENGINE v9.0.9</strong> — a 100% fictional entertainment dashboard. Every statistic on this page was invented on the spot and every roast targets a made-up, exaggerated version of NEATHISH 9 for comedy purposes only.</p>
+    <p>No actual NEATHISH 9s were harmed in the making of this website. Emotionally? That is between NEATHISH 9 and NEATHISH 9.</p>
+    <p style="color:#5f5a75">Built with HTML, CSS, JavaScript, regret, and an unreasonable amount of confidence.</p>
+  </div>
+</footer>
+
+</div><!-- /#app -->
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal" id="regretModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="glass modal-card">
+    <h3 id="modalTitle">REGRET DETECTED</h3>
+    <p>You regret everything. The engine has received your regret, filed it under "not my problem", laminated it for durability, and placed it in a drawer.<br><br><b>Regret does not cancel the roast. Regret has never cancelled a roast.</b></p>
+    <div class="btn-row">
+      <button class="btn btn-primary" id="modalRoast">🔥 ROAST ME ANYWAY</button>
+      <button class="btn btn-ghost" id="modalClose">I'd rather not</button>
+    </div>
+  </div>
+</div>
+
+<div id="toasts" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============================================================
+     UTILITIES
+  ============================================================ */
+  const $  = (s, el) => (el || document).querySelector(s);
+  const $$ = (s, el) => Array.prototype.slice.call((el || document).querySelectorAll(s));
+  const rnd = (a, b) => Math.random() * (b - a) + a;
+  const randInt = (a, b) => Math.floor(rnd(a, b + 1));
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+  /* ============================================================
+     SOUND ENGINE (Web Audio, subtle, opt-out)
+  ============================================================ */
+  let audioCtx = null;
+  let soundOn = true;
+
+  function ensureAudio(){
+    if (!audioCtx) {
+      try {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) audioCtx = new AC();
+      } catch (e) { audioCtx = null; }
+    }
+    if (audioCtx && audioCtx.state === "suspended") { audioCtx.resume().catch(()=>{}); }
+    return audioCtx;
+  }
+
+  function tone(opts){
+    opts = opts || {};
+    if (!soundOn) return;
+    const c = ensureAudio();
+    if (!c) return;
+    const freq = opts.freq || 440;
+    const dur  = opts.dur  || 0.09;
+    const type = opts.type || "square";
+    const vol  = opts.vol  || 0.035;
+    const t = c.currentTime;
+    const osc = c.createOscillator();
+    const gain = c.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, t);
+    if (opts.slide) {
+      osc.frequency.exponentialRampToValueAtTime(Math.max(24, opts.slide), t + dur);
+    }
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.linearRampToValueAtTime(vol, t + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(gain);
+    gain.connect(c.destination);
+    osc.start(t);
+    osc.stop(t + dur + 0.03);
+  }
+
+  function noise(dur, vol){
+    if (!soundOn) return;
+    const c = ensureAudio();
+    if (!c) return;
+    dur = dur || 0.3; vol = vol || 0.05;
+    const frames = Math.floor(c.sampleRate * dur);
+    const buf = c.createBuffer(1, frames, c.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < frames; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / frames, 2.4);
+    }
+    const src = c.createBufferSource();
+    src.buffer = buf;
+    const filter = c.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(1400, c.currentTime);
+    filter.frequency.exponentialRampToValueAtTime(180, c.currentTime + dur);
+    const g = c.createGain();
+    g.gain.setValueAtTime(vol, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+    src.connect(filter); filter.connect(g); g.connect(c.destination);
+    src.start();
+  }
+
+  const SFX = {
+    click(){ tone({ freq: 620, dur: 0.05, type: "square", vol: 0.025, slide: 300 }); },
+    hover(){ tone({ freq: 880, dur: 0.035, type: "sine", vol: 0.012 }); },
+    punch(){ tone({ freq: 150, dur: 0.32, type: "sawtooth", vol: 0.05, slide: 42 }); noise(0.34, 0.05); },
+    boom(){ tone({ freq: 78, dur: 0.7, type: "sine", vol: 0.075, slide: 28 }); noise(0.6, 0.045); },
+    worse(){ tone({ freq: 320, dur: 0.45, type: "sawtooth", vol: 0.045, slide: 65 });
+             tone({ freq: 640, dur: 0.3, type: "square", vol: 0.022, slide: 120 }); },
+    success(){ tone({ freq: 660, dur: 0.09, type: "sine", vol: 0.03 });
+               setTimeout(()=>tone({ freq: 990, dur: 0.13, type: "sine", vol: 0.03 }), 90); },
+    alarm(){ for (let i = 0; i < 3; i++) {
+      setTimeout(()=>tone({ freq: i % 2 ? 520 : 760, dur: 0.11, type: "square", vol: 0.03 }), i * 130);
+    } }
+  };
+
+  /* ============================================================
+     ROAST DATABASE
+  ============================================================ */
+  const ROASTS = [
+    /* --- PROCRASTINATION --- */
+    { c:"PROCRASTINATION", t:"NEATHISH 9 has a 47-step plan to get started. Step 1 is opening the laptop. Step 47 is 'actually do it'. He has been sitting on Step 1 since February, occasionally waving at Step 2." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9 doesn't procrastinate — he's entered a permanent negotiation with his own to-do list, and the to-do list has hired a lawyer." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9 set a 6 AM alarm. Then thirteen backup alarms. At this point the phone isn't an alarm, it's a hostage negotiator." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9's future self has filed a formal complaint against his present self. The court date keeps getting postponed. Guess by whom." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9's definition of 'starting early' is starting at 11:58 PM and calling it a strategy." },
+    { c:"PROCRASTINATION", t:"That assignment wasn't late. It arrived fashionably after the deadline, which is a completely different thing that nobody believes." },
+    { c:"PROCRASTINATION", t:"'I work better under pressure.' — NEATHISH 9, currently generating 214 tabs of pressure and zero units of work." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9 will spend four hours designing a productivity system and zero minutes being productive inside it." },
+    { c:"PROCRASTINATION", t:"The only thing NEATHISH 9 finishes on time is a sentence about how he'll finish things on time." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9's to-do list has become a historical document. Scholars will study it. Nobody will complete it." },
+    { c:"PROCRASTINATION", t:"NEATHISH 9 is not lazy — he's just in a long-term relationship with 'later', and 'later' is not treating him well." },
+
+    /* --- TERRIBLE TIMING --- */
+    { c:"TERRIBLE TIMING", t:"NEATHISH 9's timing is so catastrophic that when opportunity knocked, he was in the bathroom with the door locked and his headphones on." },
+    { c:"TERRIBLE TIMING", t:"He arrived early, to the wrong building, dressed for the wrong decade, holding a gift for the wrong person." },
+    { c:"TERRIBLE TIMING", t:"Gravity called NEATHISH 9 twice. He got back to them after two business days with 'sorry, just saw this'." },
+    { c:"TERRIBLE TIMING", t:"NEATHISH 9 has been 'just about to text back' for eleven days. The message has moved on and is now engaged to someone else." },
+    { c:"TERRIBLE TIMING", t:"He started a brand new habit on a Wednesday. Historically the worst possible day. Wednesday did not ask for that." },
+    { c:"TERRIBLE TIMING", t:"NEATHISH 9 peaked his confidence exactly one second before everyone else found out the truth." },
+    { c:"TERRIBLE TIMING", t:"His WiFi dies at the precise moment the one important thing he swears he was going to do finally appears on screen. The router is protecting him." },
+    { c:"TERRIBLE TIMING", t:"NEATHISH 9 says 'I was just about to say that' so consistently that it's no longer a coincidence, it's a public service." },
+    { c:"TERRIBLE TIMING", t:"He missed the bus, then missed the next one, then told everyone he chose to walk. On principle. Yes. Sure." },
+    { c:"TERRIBLE TIMING", t:"NEATHISH 9's life is a series of loading screens that finish exactly one minute after they were needed." },
+
+    /* --- OVERCONFIDENCE --- */
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9 entered the room saying 'I got this' with the confidence of a man who absolutely, categorically, did not have this." },
+    { c:"OVERCONFIDENCE", t:"His confidence is a load-bearing wall in a building that only exists in his head — and the building is on fire, and he is still giving the tour." },
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9 rated his ability 'easily a nine' while the actual scoreboard read 'please stop'." },
+    { c:"OVERCONFIDENCE", t:"He said 'I'll figure it out as I go', which in practice means 'I will panic in a slightly different location'." },
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9 is 100% certain about things that haven't happened, involving people who have never met him, in a city he has never visited." },
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9's ego has its own weather system. Currently: unpredictable, high winds, occasional hail, no survivors." },
+    { c:"OVERCONFIDENCE", t:"He walks into every exam like a genius and out of it like an origin story." },
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9 has never once said 'I don't know'. He says 'I'd have to check', which means the same thing but with more drama and a longer pause." },
+    { c:"OVERCONFIDENCE", t:"Confidence: 10/10. Accuracy: a rounding error. Self-awareness: not installed on this device." },
+    { c:"OVERCONFIDENCE", t:"NEATHISH 9 stared at a problem for three hours and genuinely considered that 'being all over it'." },
+
+    /* --- CHAOTIC SCHOOL LIFE --- */
+    { c:"SCHOOL LIFE", t:"NEATHISH 9's school bag is an active archaeological dig. Someday we will excavate last term's homework, perfectly preserved, entirely blank." },
+    { c:"SCHOOL LIFE", t:"He once submitted an assignment so late that the teacher had retired, and the new teacher graded it out of pity and a sense of duty to the state." },
+    { c:"SCHOOL LIFE", t:"NEATHISH 9's attendance chart looks like a heartbeat monitor during a horror film." },
+    { c:"SCHOOL LIFE", t:"He studied for twenty minutes and told everyone he 'basically lived in the library'. The library would like to formally deny this." },
+    { c:"SCHOOL LIFE", t:"NEATHISH 9's notes are 60% doodles, 30% motivational quotes, and 10% a phone number he doesn't remember getting." },
+    { c:"SCHOOL LIFE", t:"He brought a calculator to a subject that legally cannot involve a calculator, and then used it." },
+    { c:"SCHOOL LIFE", t:"NEATHISH 9 asked a question in class so long that the bell rang during it. Twice. On different days." },
+    { c:"SCHOOL LIFE", t:"His group project experience is: five minutes of work, five months of anxiety, and five people who now avoid him in corridors." },
+    { c:"SCHOOL LIFE", t:"NEATHISH 9 went to school for the vibes and accidentally stayed for four years." },
+    { c:"SCHOOL LIFE", t:"He has a rare talent for looking extremely busy while absolutely nothing is being produced. Teachers describe it as 'artistic'." },
+    { c:"SCHOOL LIFE", t:"NEATHISH 9's revision timetable has more versions than his personality has moods, and neither document has ever been opened twice." },
+
+    /* --- FOOTBALL OBSESSION --- */
+    { c:"FOOTBALL", t:"NEATHISH 9 watches football with the tactical insight of a man yelling 'SHOOT' at a player sixty yards away facing the wrong direction." },
+    { c:"FOOTBALL", t:"His team lost and he cancelled all weekend plans to grieve, as if he had personally been on the pitch. Sir. You were on the couch. You had a blanket." },
+    { c:"FOOTBALL", t:"NEATHISH 9 has never once been right about a transfer rumour, and delivers each one like a government announcement." },
+    { c:"FOOTBALL", t:"He has screamed at a referee through a television screen. The referee, tragically, has never heard him and never will." },
+    { c:"FOOTBALL", t:"NEATHISH 9 gives post-match analysis with the intensity of a man who has never touched a ball and never will, by choice, out of fear." },
+    { c:"FOOTBALL", t:"His team conceded from a corner and NEATHISH 9 took it personally, emotionally, and financially." },
+    { c:"FOOTBALL", t:"NEATHISH 9's weekend has exactly three settings: match, waiting for match, and pretending to be okay after match." },
+    { c:"FOOTBALL", t:"He has a formation opinion. He has a manager opinion. He owns a shirt. That's it. That's the entire CV." },
+    { c:"FOOTBALL", t:"NEATHISH 9 once said 'we can still win this' at 89 minutes, four goals down, with ten men — and meant it. Faith like that should be studied by scientists." },
+    { c:"FOOTBALL", t:"He sulked after a draw. A draw. The most neutral possible outcome, and NEATHISH 9 took it like a personal betrayal by the universe." },
+    { c:"FOOTBALL", t:"NEATHISH 9 knows every player's stats and cannot remember where he left his keys. Priorities: world-class." },
+
+    /* --- TECH PROJECTS --- */
+    { c:"TECH PROJECTS", t:"NEATHISH 9 has started 47 tech projects and completed negative three. That's not zero — he somehow owes completion to the universe." },
+    { c:"TECH PROJECTS", t:"His GitHub is a graveyard of repositories named test, test2, test-FINAL, and FINAL-v2-real-actual-this-time." },
+    { c:"TECH PROJECTS", t:"NEATHISH 9 spent six hours configuring a system to save four minutes, then never used it again. The four minutes remain unsaved." },
+    { c:"TECH PROJECTS", t:"He rewrote his project in a brand new framework before checking whether the old one worked. It didn't. He knew. He rewrote it anyway." },
+    { c:"TECH PROJECTS", t:"NEATHISH 9's code has comments like 'not sure why this works' and 'do not touch'. Everything is 'do not touch'. Nothing is documented." },
+    { c:"TECH PROJECTS", t:"He called it 'almost done' in March. It is now a museum exhibit with its own plaque and a small gift shop." },
+    { c:"TECH PROJECTS", t:"NEATHISH 9 debugs by adding console logs until the screen is 70% logs and 30% regret." },
+    { c:"TECH PROJECTS", t:"He has a favourite programming language. The project doesn't. The project doesn't exist yet." },
+    { c:"TECH PROJECTS", t:"NEATHISH 9 spent an entire weekend setting up the environment for a project that ultimately required a text file." },
+    { c:"TECH PROJECTS", t:"His most-used keyboard shortcut is Ctrl+Z, and he has started applying it to his life goals." },
+    { c:"TECH PROJECTS", t:"NEATHISH 9 has 40 repositories and 3 commits on each. Every single one says 'initial commit'. Nothing has ever progressed past the beginning." },
+
+    /* --- OVERCOMPLICATING --- */
+    { c:"OVERCOMPLICATING", t:"Asked to make toast, NEATHISH 9 designed a distributed system with four microservices, a dashboard and an incident report. The kitchen is still on fire." },
+    { c:"OVERCOMPLICATING", t:"He will build an entire application to avoid writing a three-line email. The email remains unwritten. The app remains unbuilt." },
+    { c:"OVERCOMPLICATING", t:"NEATHISH 9 needed to write down one number. He created a folder structure, a naming convention and a backup strategy. He forgot the number." },
+    { c:"OVERCOMPLICATING", t:"For a task that required 'just ask someone', NEATHISH 9 produced a nineteen-tab research session, three drafts, and total silence." },
+    { c:"OVERCOMPLICATING", t:"He solved a simple problem by introducing two brand new, much more interesting problems." },
+    { c:"OVERCOMPLICATING", t:"NEATHISH 9's approach to any small inconvenience is: form a committee, appoint himself chairman, dissolve the committee, complain." },
+    { c:"OVERCOMPLICATING", t:"He once automated a task so thoroughly that the automation took longer every single time. He kept it. He loves it. He shows people." },
+    { c:"OVERCOMPLICATING", t:"NEATHISH 9 opens a document, stares at it, renames it four times and closes it. That's his creative process. That's all of it." },
+    { c:"OVERCOMPLICATING", t:"He needed a note. He built a database. The note says 'buy milk'. The database is unmaintained and the milk was never bought." },
+    { c:"OVERCOMPLICATING", t:"NEATHISH 9 makes simple things enormous so that failing at them feels ambitious rather than embarrassing." },
+
+    /* --- UNREALISTIC PLANS --- */
+    { c:"UNREALISTIC PLANS", t:"NEATHISH 9's five-year plan contains five versions of him, all billionaires, none of them currently existing in any timeline." },
+    { c:"UNREALISTIC PLANS", t:"He plans like the universe owes him a favour and has already approved the budget." },
+    { c:"UNREALISTIC PLANS", t:"NEATHISH 9 said he'd be up at 4 AM to grind. He was awake at 4 AM. That's it. That's the whole grind. He was awake. On his phone." },
+    { c:"UNREALISTIC PLANS", t:"His plan has phases. The phases have phases. Nothing has started. Phase Zero is 'feel ready'." },
+    { c:"UNREALISTIC PLANS", t:"NEATHISH 9 told everyone he was 'locked in'. Nobody has ever seen him locked in. The lock has not been confirmed by any authority." },
+    { c:"UNREALISTIC PLANS", t:"His backup plan is the exact same plan, delivered in a more dramatic voice." },
+    { c:"UNREALISTIC PLANS", t:"NEATHISH 9's idea of a small first step is a leap that has never been performed by a human being with a body." },
+    { c:"UNREALISTIC PLANS", t:"He scheduled his success for a specific date. The date passed. He rescheduled it. He is extremely good at rescheduling." },
+    { c:"UNREALISTIC PLANS", t:"NEATHISH 9 has planned the launch, the branding and the merch. The product is a single thought he had in the shower." },
+    { c:"UNREALISTIC PLANS", t:"He says 'this is the year' every year, and the years are starting to talk about him behind his back." },
+
+    /* --- DRAMATIC REACTIONS --- */
+    { c:"DRAMATIC REACTIONS", t:"NEATHISH 9 stubbed his toe and wrote a three-paragraph caption about resilience." },
+    { c:"DRAMATIC REACTIONS", t:"He got one fewer like than expected and immediately entered an existential crisis, complete with background music and a filter." },
+    { c:"DRAMATIC REACTIONS", t:"A minor inconvenience hit NEATHISH 9 and he uninstalled his entire personality for the evening." },
+    { c:"DRAMATIC REACTIONS", t:"He calls it 'character development'. Everyone else calls it 'a Tuesday'." },
+    { c:"DRAMATIC REACTIONS", t:"NEATHISH 9 lost a game and delivered a monologue so heavy it should have been graded and returned with comments." },
+    { c:"DRAMATIC REACTIONS", t:"His reaction to being mildly inconvenienced is a full cinematic universe with a sequel already greenlit." },
+    { c:"DRAMATIC REACTIONS", t:"NEATHISH 9 typed a message, deleted it, typed it again, deleted it again, and sent 'k'. That took eleven minutes and cost him his dignity." },
+    { c:"DRAMATIC REACTIONS", t:"He describes a completely normal mistake as 'my villain origin story'. Sir, you forgot your keys. Relax." },
+    { c:"DRAMATIC REACTIONS", t:"NEATHISH 9's emotional range goes from 'totally fine' to 'documenting it for the memoir' in 0.4 seconds." },
+    { c:"DRAMATIC REACTIONS", t:"Someone replied 'okay' instead of 'okay!' and NEATHISH 9 needed a moment. Several moments. An entire evening of moments." },
+
+    /* --- MAIN CHARACTER ENERGY --- */
+    { c:"MAIN CHARACTER ENERGY", t:"NEATHISH 9 walks into rooms expecting a soundtrack. The only thing playing is the sound of everyone checking their phones." },
+    { c:"MAIN CHARACTER ENERGY", t:"He thinks in montages and lives in buffering." },
+    { c:"MAIN CHARACTER ENERGY", t:"Every morning NEATHISH 9 wakes up as the protagonist of a film nobody bought a ticket for." },
+    { c:"MAIN CHARACTER ENERGY", t:"He narrates his own life like a documentary, and the ratings are so bad the channel has formally apologised." },
+    { c:"MAIN CHARACTER ENERGY", t:"NEATHISH 9 believes there's a camera following him. There is. It's his front-facing camera. He opened it by accident." },
+    { c:"MAIN CHARACTER ENERGY", t:"He entered a room, paused for dramatic effect, and the effect was: nobody noticed." },
+    { c:"MAIN CHARACTER ENERGY", t:"NEATHISH 9's internal monologue has its own soundtrack, its own trailer and a deeply disappointing opening weekend." },
+    { c:"MAIN CHARACTER ENERGY", t:"He assumes every silence is about him. It isn't. It's about dinner." },
+    { c:"MAIN CHARACTER ENERGY", t:"NEATHISH 9 waited for the applause. It never came. He is still waiting. It has been years. Someone please help him." },
+    { c:"MAIN CHARACTER ENERGY", t:"The universe has a main character. NEATHISH 9 is a very committed extra with an unusually detailed backstory." },
+
+    /* --- NUCLEAR / GENERAL DESTRUCTION --- */
+    { c:"NUCLEAR", t:"The engine processed NEATHISH 9's entire personality and produced exactly one output, in all caps: 'SIR. WHY.'" },
+    { c:"NUCLEAR", t:"If confidence were currency, NEATHISH 9 would be the richest broke person alive, with a negative bank balance and a podcast." },
+    { c:"NUCLEAR", t:"NEATHISH 9 is living proof that you can have big dreams, big plans, big feelings, and absolutely no follow-through whatsoever." },
+    { c:"NUCLEAR", t:"The engine asked for NEATHISH 9's biggest achievement. There was a loading spinner for four minutes. Then it just said 'cricket noises'." },
+    { c:"NUCLEAR", t:"NEATHISH 9 has the energy of a leader and the follow-through of a browser tab you meant to come back to three weeks ago." },
+    { c:"NUCLEAR", t:"Everything NEATHISH 9 does is 10% idea, 20% research, and 70% explaining the idea to people who did not ask." },
+    { c:"NUCLEAR", t:"NEATHISH 9's life motto is 'next time'. His life soundtrack is a notification chime he is actively ignoring." },
+    { c:"NUCLEAR", t:"Diagnostic complete. Result: 'works best under pressure'. Pressure: not currently present. NEATHISH 9: not currently working." },
+    { c:"NUCLEAR", t:"NEATHISH 9 could sell you a dream and then forget to hand over the dream. He'd also follow up to ask how the dream is going." },
+    { c:"NUCLEAR", t:"Somewhere there is a parallel version of NEATHISH 9 who finishes things. Our NEATHISH 9 just sends him memes and pretends that counts as networking." }
+  ];
+
+  /* --- ESCALATION SUFFIXES FOR "MAKE IT WORSE" --- */
+  const WORSE_LINES = [
+    "And the worst part? You're going to screenshot this and show someone. You always do. You always will.",
+    "Your 3 AM self is going to remember this exact sentence and cringe hard enough that the mattress files a formal complaint.",
+    "You read that twice to check if it was really about you. It was. It is going to be about you forever.",
+    "I ran this through the personality scanner and it returned a single word, all lowercase: why.",
+    "Somewhere, a teacher who once believed in you just felt a chill and does not know why.",
+    "You will now think about this in the shower, in the car, and at 2:47 AM. You're welcome.",
+    "This roast has been added to your permanent record. The record is currently a comedy special with a live audience.",
+    "I'd apologise, but you pressed MAKE IT WORSE. You did this. You built this. You are the architect of your own destruction.",
+    "Your future self just flinched. In the future. That is how deep this one lands.",
+    "The engine had to cool down after this one. The engine has a family, NEATHISH 9.",
+    "You are not the main character — but congratulations, you are the after-credits scene.",
+    "Somewhere a highlight reel is playing and you are the blooper segment with your own theme music.",
+    "This is the roast your friends will read out loud in a group chat. Without you. Twice.",
+    "I would say I'm sorry, but the data clearly shows you enjoyed this. That is the real roast.",
+    "You now have one unfinished project dedicated entirely to processing this roast. It is 4% complete.",
+    "The engine gave you a participation trophy. It is on fire. You are still holding it with both hands.",
+    "Somebody, somewhere, just said your name, laughed, and refused to explain why.",
+    "You're going to send this to someone to prove it's funny. They're going to agree. That's the worst part — they're going to agree."
+  ];
+
+  const OPENERS = {
+    friendly:      ["In the gentlest possible way: ", "Small note, no hard feelings: ", ""],
+    spicy:         ["Okay, real talk: ", "Look... ", ""],
+    savage:        ["Let's be honest: ", "Straight up: ", ""],
+    brutal:        ["No filter: ", "Alright, gloves off: ", ""],
+    catastrophic:  ["Brace yourself: ", "Sit down: ", ""],
+    extinction:    ["You asked for this: ", "Final warning: ", ""],
+    nuclear:       ["☢ NUCLEAR: ", "🔥 LEVEL 100 — ", ""],
+    overload:      ["☢☢ CRITICAL OVERLOAD: ", "🔥🔥 BEYOND ALL LIMITS: ", ""]
+  };
+
+  /* ============================================================
+     LEVEL SYSTEM
+  ============================================================ */
+  const LEVELS = [
+    { max: 10,  name: "FRIENDLY",      desc: "A gentle nudge. Barely a roast. Practically a compliment.", key: "friendly", badge: "☺ SAFETY RAILS: ON" },
+    { max: 25,  name: "SPICY",         desc: "Mild heat. The engine is warming up and so is your face.", key: "spicy", badge: "🌶 MILD IRRITATION" },
+    { max: 45,  name: "SAVAGE",        desc: "Direct hits. Personal. Uncomfortably accurate.", key: "savage", badge: "⚔ TARGET LOCKED" },
+    { max: 65,  name: "BRUTAL",        desc: "The engine is no longer being polite and honestly never was.", key: "brutal", badge: "💥 STRUCTURAL DAMAGE" },
+    { max: 85,  name: "CATASTROPHIC",  desc: "Witnesses required. Emotional support recommended.", key: "catastrophic", badge: "🚨 EVACUATION ADVISED" },
+    { max: 99,  name: "EXTINCTION",    desc: "You are approaching the final form of this machine.", key: "extinction", badge: "☠ POINT OF NO RETURN" },
+    { max: 100, name: "NUCLEAR",       desc: "NEATHISH 9 Has Made A Terrible Decision.", key: "nuclear", badge: "☢ SAFETY RAILS: DISABLED" }
+  ];
+
+  const state = {
+    intensity: 100,
+    worsening: 0,
+    lastIndexes: [],
+    damageTotal: 0,
+    metrics: { ego: 100, dignity: 100, cope: 100, mcs: 60 },
+    firstRoast: true,
+    lastRoastText: ""
+  };
+
+  function levelFor(v){
+    if (v > 100) return { name: "CRITICAL OVERLOAD", desc: "The engine has exceeded its own limits because you specifically asked it to. This is documented.", key: "overload", badge: "☢☢ PROTOCOLS: DELETED" };
+    for (let i = 0; i < LEVELS.length; i++) if (v <= LEVELS[i].max) return LEVELS[i];
+    return LEVELS[LEVELS.length - 1];
+  }
+
+  /* ============================================================
+     DOM REFS
+  ============================================================ */
+  const els = {
+    app: $("#app"),
+    flash: $("#flash"),
+    boot: $("#boot"),
+    bootLog: $("#bootLog"),
+    bootBar: $("#bootBar"),
+    bootSkip: $("#bootSkip"),
+    soundToggle: $("#soundToggle"),
+    heroRoast: $("#heroRoast"),
+    regretBtn: $("#regretBtn"),
+    idleRoast: $("#idleRoast"),
+    againBtn: $("#againBtn"),
+    idleState: $("#idleState"),
+    roastCard: $("#roastCard"),
+    roastText: $("#roastText"),
+    roastCat: $("#roastCat"),
+    cardLevel: $("#cardLevel"),
+    consoleStatus: $("#consoleStatus"),
+    warnBox: $("#warnBox"),
+    warnText: $("#warnText"),
+    comboTag: $("#comboTag"),
+    dmgTotal: $("#dmgTotal"),
+    anotherBtn: $("#anotherBtn"),
+    worseBtn: $("#worseBtn"),
+    copyBtn: $("#copyBtn"),
+    shareBtn: $("#shareBtn"),
+    intensity: $("#intensity"),
+    levelNum: $("#levelNum"),
+    levelName: $("#levelName"),
+    levelDesc: $("#levelDesc"),
+    levelBadge: $("#levelBadge"),
+    quickRow: $("#quickRow"),
+    toasts: $("#toasts"),
+    regretModal: $("#regretModal"),
+    modalRoast: $("#modalRoast"),
+    modalClose: $("#modalClose"),
+    regretVal: $("#regretVal"),
+    regretBar: $("#regretBar")
+  };
+
+  /* ============================================================
+     TOASTS
+  ============================================================ */
+  function toast(msg, ms){
+    const el = document.createElement("div");
+    el.className = "toast";
+    el.innerHTML = msg;
+    els.toasts.appendChild(el);
+    setTimeout(() => {
+      el.classList.add("out");
+      setTimeout(() => el.remove(), 320);
+    }, ms || 2800);
+  }
+
+  /* ============================================================
+     INTENSITY UI
+  ============================================================ */
+  function updateLevelUI(){
+    const lv = levelFor(state.intensity);
+    els.levelNum.textContent = state.intensity;
+    els.levelName.textContent = lv.name;
+    els.levelDesc.textContent = lv.desc;
+    els.levelBadge.textContent = lv.badge;
+    $$(".chip", els.quickRow).forEach(c => {
+      c.classList.toggle("active", parseInt(c.dataset.level, 10) === state.intensity);
+    });
+    if (!els.roastCard.classList.contains("show")) {
+      els.cardLevel.textContent = "LEVEL " + state.intensity + " · " + lv.name;
+    }
+  }
+
+  els.intensity.addEventListener("input", function(){
+    state.intensity = parseInt(this.value, 10);
+    updateLevelUI();
+    SFX.click();
+  });
+
+  els.quickRow.addEventListener("click", function(e){
+    const chip = e.target.closest(".chip");
+    if (!chip) return;
+    state.intensity = parseInt(chip.dataset.level, 10);
+    els.intensity.value = state.intensity;
+    updateLevelUI();
+    SFX.click();
+    toast("Intensity set to <b>" + state.intensity + "</b> · " + levelFor(state.intensity).name);
+  });
+
+  /* ============================================================
+     ROAST GENERATION
+  ============================================================ */
+  function pickRoast(){
+    let idx;
+    let guard = 0;
+    do {
+      idx = Math.floor(Math.random() * ROASTS.length);
+      guard++;
+    } while (state.lastIndexes.indexOf(idx) !== -1 && guard < 80);
+    state.lastIndexes.push(idx);
+    if (state.lastIndexes.length > 14) state.lastIndexes.shift();
+    return ROASTS[idx];
+  }
+
+  function buildRoastText(base, levelKey){
+    const opener = pick(OPENERS[levelKey] || OPENERS.nuclear);
+    return { opener: opener, body: base };
+  }
+
+  function renderRoast(opts){
+    opts = opts || {};
+    const isWorse = !!opts.worse;
+    const r = pickRoast();
+    const lv = levelFor(state.intensity);
+    const composed = buildRoastText(r.t, lv.key);
+
+    let html = "";
+    if (composed.opener) html += '<span class="pre">' + composed.opener + '</span>';
+    html += composed.body;
+
+    if (isWorse) {
+      html += '<span class="worse">☢ ' + pick(WORSE_LINES) + '</span>';
+    }
+
+    els.roastText.innerHTML = html;
+    els.roastCat.textContent = "#" + r.c;
+    els.cardLevel.textContent = "LEVEL " + state.intensity + " · " + lv.name;
+
+    state.lastRoastText = els.roastText.textContent.trim();
+
+    /* show card */
+    els.idleState.style.display = "none";
+    els.roastCard.classList.add("show");
+
+    /* re-trigger entry animation */
+    els.roastCard.classList.remove("hit");
+    void els.roastCard.offsetWidth;
+    els.roastCard.classList.add("hit");
+
+    /* shake + flash */
+    triggerImpact(isWorse);
+
+    /* warning box for worse mode */
+    if (isWorse) {
+      els.warnBox.classList.add("show");
+      els.warnText.innerHTML = "<b>WARNING — ESCALATION " + state.worsening + " ACCEPTED.</b> " +
+        "You specifically requested that this get worse. The engine has logged your request, judged it, " +
+        "quietly closed the safety documentation, and disabled the brakes. Any distress caused is now " +
+        "officially classified as self-inflicted. Well done, NEATHISH 9.";
+      els.comboTag.textContent = "ESCALATION ×" + state.worsening;
+      els.comboTag.classList.add("show");
+    } else {
+      els.warnBox.classList.remove("show");
+      if (state.worsening > 0) {
+        els.comboTag.textContent = "ESCALATION ×" + state.worsening;
+        els.comboTag.classList.add("show");
+      } else {
+        els.comboTag.classList.remove("show");
+      }
+    }
+
+    updateDamage(isWorse);
+    els.consoleStatus.textContent = "STATUS: ROAST DELIVERED · " + new Date().toLocaleTimeString();
+  }
+
+  function triggerImpact(hard){
+    els.flash.classList.add("on");
+    setTimeout(() => els.flash.classList.remove("on"), 70);
+
+    els.app.classList.remove("shake");
+    void els.app.offsetWidth;
+    els.app.classList.add("shake");
+    setTimeout(() => els.app.classList.remove("shake"), 460);
+
+    if (hard) { SFX.boom(); } else { SFX.punch(); }
+
+    /* floating damage number */
+    const dmg = randInt(hard ? 240000 : 80000, hard ? 990000 : 320000);
+    const span = document.createElement("span");
+    span.className = "floatdmg";
+    span.textContent = "-" + dmg.toLocaleString() + " EGO";
+    els.roastCard.appendChild(span);
+    setTimeout(() => span.remove(), 1250);
+
+    state.damageTotal += dmg;
+    els.dmgTotal.textContent = "-" + state.damageTotal.toLocaleString();
+  }
+
+  function updateDamage(hard){
+    const m = state.metrics;
+    m.ego     = clamp(m.ego     - randInt(hard ? 9 : 4, hard ? 19 : 9), 0, 100);
+    m.dignity = clamp(m.dignity - randInt(hard ? 10 : 5, hard ? 22 : 11), 0, 100);
+    m.cope    = clamp(m.cope    - randInt(hard ? 8 : 3, hard ? 18 : 8), 0, 100);
+    m.mcs     = clamp(m.mcs     + randInt(hard ? 5 : 2, hard ? 12 : 6), 0, 100);
+
+    setMetric("ego", m.ego);
+    setMetric("dignity", m.dignity);
+    setMetric("cope", m.cope);
+    setMetric("mcs", m.mcs);
+  }
+
+  function setMetric(key, val){
+    const row = document.querySelector('.metric[data-metric="' + key + '"]');
+    if (!row) return;
+    const bar = row.querySelector(".bar i");
+    const label = row.querySelector(".metric-val");
+    bar.style.width = val + "%";
+    label.textContent = val + "%";
+  }
+
+  /* ============================================================
+     ACTIONS
+  ============================================================ */
+  function doRoast(worse){
+    if (worse) {
+      state.worsening += 1;
+      if (state.intensity < 100) state.intensity = 100;
+      if (state.worsening > 1) {
+        state.intensity = 100; /* label handled below */
+      }
+      SFX.worse();
+      els.levelName.textContent = "CRITICAL OVERLOAD";
+      els.levelDesc.textContent = "The engine has exceeded its own limits because you specifically asked it to.";
+      els.levelNum.textContent = "100+";
+      els.levelBadge.textContent = "☢☢ PROTOCOLS: DELETED";
+      els.intensity.value = 100;
+      $$(".chip", els.quickRow).forEach(c => c.classList.remove("active"));
+    }
+    renderRoast({ worse: !!worse });
+    if (state.firstRoast) {
+      state.firstRoast = false;
+      setTimeout(() => toast("First roast delivered. <b>110 more loaded.</b> They get worse."), 900);
+    }
+  }
+
+  function scrollRoast(){
+    const y = $("#console").getBoundingClientRect().top + window.pageYOffset - 78;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
+  function roastAndScroll(worse){
+    doRoast(worse);
+    scrollRoast();
+  }
+
+  /* wiring */
+  els.heroRoast.addEventListener("click", () => { SFX.alarm(); roastAndScroll(false); });
+  els.idleRoast.addEventListener("click", () => { roastAndScroll(false); });
+  els.anotherBtn.addEventListener("click", () => { doRoast(false); });
+  els.worseBtn.addEventListener("click", () => { doRoast(true); });
+  els.againBtn.addEventListener("click", () => { SFX.alarm(); roastAndScroll(true); });
+
+  els.regretBtn.addEventListener("click", () => {
+    SFX.click();
+    els.regretModal.classList.add("open");
+  });
+  els.modalClose.addEventListener("click", () => {
+    els.regretModal.classList.remove("open");
+    SFX.success();
+    toast("That's the first sensible decision you've made all day. Respectfully.");
+  });
+  els.modalRoast.addEventListener("click", () => {
+    els.regretModal.classList.remove("open");
+    SFX.boom();
+    roastAndScroll(true);
+  });
+  els.regretModal.addEventListener("click", (e) => {
+    if (e.target === els.regretModal) els.regretModal.classList.remove("open");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") els.regretModal.classList.remove("open");
+  });
+
+  /* copy + share */
+  function fallbackCopy(text){
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    ta.remove();
+  }
+
+  els.copyBtn.addEventListener("click", () => {
+    const text = "NEATHISH 9 ROAST ENGINE ☢\n\n" + state.lastRoastText +
+                 "\n\n— Delivered at LEVEL " + state.intensity + " · " + levelFor(state.intensity).name;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        () => { SFX.success(); toast("Roast copied. Go on, paste it somewhere. Ruin your own day."); },
+        () => { fallbackCopy(text); SFX.success(); toast("Roast copied (offline mode). You're welcome, unfortunately."); }
+      );
+    } else {
+      fallbackCopy(text);
+      SFX.success();
+      toast("Roast copied. Use it wisely. You won't.");
+    }
+  });
+
+  els.shareBtn.addEventListener("click", () => {
+    const text = "NEATHISH 9 ROAST ENGINE ☢\n\n" + state.lastRoastText;
+    if (navigator.share) {
+      navigator.share({ title: "NEATHISH 9 Roast Engine", text: text }).then(
+        () => { SFX.success(); toast("Shared. There are witnesses now."); },
+        () => {}
+      );
+    } else {
+      fallbackCopy(text);
+      SFX.success();
+      toast("Sharing isn't supported here, so the roast is on your clipboard. Same energy.");
+    }
+  });
+
+  els.soundToggle.addEventListener("click", () => {
+    soundOn = !soundOn;
+    els.soundToggle.textContent = soundOn ? "🔊" : "🔇";
+    els.soundToggle.setAttribute("aria-label", soundOn ? "Mute sound effects" : "Unmute sound effects");
+    if (soundOn) { ensureAudio(); SFX.success(); toast("Sound on. Now you can hear your dignity leaving."); }
+    else { toast("Sound off. The silence is somehow worse."); }
+  });
+
+  /* hover blips on primary buttons (subtle) */
+  $$(".btn").forEach(b => {
+    b.addEventListener("mouseenter", () => SFX.hover());
+  });
+
+  /* ============================================================
+     ANALYTICS: counters + bars + feed
+  ============================================================ */
+  function animateCount(el){
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const suffix = el.dataset.suffix || "";
+    const dur = 1500;
+    const start = performance.now();
+    function frame(t){
+      const p = Math.min(1, (t - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString() + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  let analyticsDone = false;
+  function runAnalytics(){
+    if (analyticsDone) return;
+    analyticsDone = true;
+    $$("[data-count]").forEach(animateCount);
+    $$(".bar i[data-w]").forEach(i => { i.style.width = i.dataset.w + "%"; });
+  }
+
+  /* ============================================================
+     REVEAL ON SCROLL
+  ============================================================ */
+  const revealEls = $$(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add("in");
+          if (en.target.closest("#analytics")) runAnalytics();
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+    revealEls.forEach(el => io.observe(el));
+
+    const ioA = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) { runAnalytics(); ioA.disconnect(); } });
+    }, { threshold: 0.05 });
+    const analyticsEl = $("#analytics");
+    if (analyticsEl) ioA.observe(analyticsEl);
+  } else {
+    revealEls.forEach(el => el.classList.add("in"));
+    runAnalytics();
+  }
+
+  /* ============================================================
+     PARTICLE BACKGROUND
+  ============================================================ */
+  (function particles(){
+    const canvas = $("#fx");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let w = 0, h = 0, dpr = 1;
+    let parts = [];
+    const COUNT = reduce ? 22 : (window.innerWidth < 700 ? 46 : 86);
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function make(){
+      const purple = Math.random() < 0.42;
+      return {
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: rnd(0.7, 2.6),
+        vy: -rnd(0.12, 0.55),
+        vx: rnd(-0.18, 0.18),
+        a: rnd(0.12, 0.6),
+        tw: rnd(0.004, 0.02),
+        ph: Math.random() * Math.PI * 2,
+        col: purple ? [168, 85, 247] : [255, 47, 77]
+      };
+    }
+
+    function init(){
+      parts = [];
+      for (let i = 0; i < COUNT; i++) {
+        const p = make();
+        p.y = Math.random() * h;
+        parts.push(p);
+      }
+    }
+
+    let last = 0;
+    function loop(t){
+      if (!document.hidden) {
+        ctx.clearRect(0, 0, w, h);
+        const dt = Math.min(2, (t - last) / 16.67 || 1);
+        last = t;
+        for (let i = 0; i < parts.length; i++) {
+          const p = parts[i];
+          p.y += p.vy * dt;
+          p.x += p.vx * dt + Math.sin((t * 0.0006) + p.ph) * 0.16;
+          p.ph += p.tw;
+          const alpha = p.a * (0.55 + 0.45 * Math.sin(p.ph * 2.2));
+          if (p.y < -12 || p.x < -20 || p.x > w + 20) {
+            parts[i] = make();
+            parts[i].y = h + 10;
+            parts[i].x = Math.random() * w;
+          }
+          ctx.beginPath();
+          ctx.fillStyle = "rgba(" + p.col[0] + "," + p.col[1] + "," + p.col[2] + "," + alpha.toFixed(3) + ")";
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    init();
+    requestAnimationFrame(loop);
+
+    let rzT;
+    window.addEventListener("resize", () => {
+      clearTimeout(rzT);
+      rzT = setTimeout(() => { resize(); init(); }, 160);
+    });
+  })();
+
+  /* ============================================================
+     BOOT SEQUENCE
+  ============================================================ */
+  (function boot(){
+    const lines = [
+      { txt: "> INITIALIZING ROAST ENGINE v9.0.9 ...", cls: "dim" },
+      { txt: "> loading 4,206,911 insults from the cloud .......... OK", cls: "" },
+      { txt: "> calibrating savagery .............................. 100%", cls: "" },
+      { txt: "> scanning target: NEATHISH 9", cls: "dim" },
+      { txt: "> detecting questionable life choices ............... 61 found", cls: "warn" },
+      { txt: "> scanning for unfinished tech projects ............. 47 found", cls: "warn" },
+      { txt: "> analysing football opinions ....................... CRITICAL", cls: "bad" },
+      { txt: "> checking main character syndrome .................. SEVERE", cls: "bad" },
+      { txt: "> measuring available dignity ....................... 0.02%", cls: "bad" },
+      { txt: "> removing safety protocols ......................... done :)", cls: "warn" },
+      { txt: "> ROAST ENGINE READY. God help you, NEATHISH 9.", cls: "" }
+    ];
+
+    let i = 0;
+    let finished = false;
+    const speed = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 205;
+
+    function step(){
+      if (i >= lines.length) {
+        finish();
+        return;
+      }
+      const l = lines[i];
+      const span = document.createElement("span");
+      span.className = l.cls;
+      span.textContent = l.txt + "\n";
+      els.bootLog.appendChild(span);
+      els.bootBar.style.width = Math.round(((i + 1) / lines.length) * 100) + "%";
+      i++;
+      setTimeout(step, speed);
+    }
+
+    function finish(){
+      if (finished) return;
+      finished = true;
+      els.bootBar.style.width = "100%";
+      setTimeout(() => {
+        els.boot.classList.add("hide");
+        setTimeout(() => { els.boot.style.display = "none"; }, 640);
+      }, 340);
+    }
+
+    els.bootSkip.addEventListener("click", () => {
+      SFX.click();
+      finish();
+    });
+
+    /* safety: never trap the user behind the overlay */
+    setTimeout(finish, 7000);
+
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(step, 260);
+    } else {
+      window.addEventListener("DOMContentLoaded", () => setTimeout(step, 260));
+    }
+  })();
+
+  /* ============================================================
+     IDLE REGRET METER DRIFT (cosmetic fun)
+  ============================================================ */
+  (function regret(){
+    let v = 100;
+    setInterval(() => {
+      v = clamp(v + (Math.random() < 0.5 ? 0 : 0.01), 100, 128);
+      if (els.regretVal) els.regretVal.textContent = Math.round(v) + "%";
+      if (els.regretBar) els.regretBar.style.width = clamp(v, 100, 128) / 1.28 + "%";
+    }, 2600);
+  })();
+
+  /* init UI */
+  updateLevelUI();
+  SFX.prep = true;
+
+})();
+</script>
+</body>
+</html>
